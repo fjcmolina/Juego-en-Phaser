@@ -12,7 +12,7 @@ class Scene_play extends Phaser.Scene {
     }
     
     create(){
-
+      
         //let solo funciona en la funcion create
         let center_width = this.sys.game.config.width/2;
         let center_height = this.sys.game.config.height/2;
@@ -70,6 +70,7 @@ class Scene_play extends Phaser.Scene {
         if(this.ball.x < 0 ){
             scoreRight++;
             scoreTextRight.setText(scoreRight);
+            this.cameras.main.shake(100);
             if(scoreRight == 3){
                 //this.add.text(this.sys.game.config.width/2, this.sys.game.config.height/2, 'Jugador derecha gana', { font: '16px Arial', fill: '#0095DD' });
                 alert("JUGADOR MORADO GANA");
@@ -79,6 +80,7 @@ class Scene_play extends Phaser.Scene {
         }else if(this.ball.x > this.sys.game.config.width){
             scoreLeft++;
             scoreTextLeft.setText(scoreLeft);
+            this.cameras.main.shake(100);
             if(scoreLeft == 3){
                 //this.add.text(this.sys.game.config.width/2, this.sys.game.config.height/2, 'Jugador izquierda gana', { font: '16px Arial', fill: '#0095DD' });
                 alert("JUGADOR AZUL GANA");
